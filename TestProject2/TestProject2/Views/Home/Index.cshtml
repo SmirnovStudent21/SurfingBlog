@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Моя первая страница";
+}
+
+
+<p>Скоро мы будем писать сайт блога!</p>
+
+<a asp-controller="Home" asp-action="About">Переход на страницу О програме </a>
+
+<hr />
+<br />
+@ViewBag.Count
+<br />
+@ViewBag.Message
+<br />
+@ViewBag.Date.ToString("dd.MM.yy")
+<br />
+<br />
+@foreach (string name in @ViewBag.Names)
+{
+
+    <div class="panel panel-info tiny-panel">
+        <div class="panel-heading">
+            Имя
+        </div>
+        <div class="panel-body">
+            @name <img src="~/img/avatar.png" width="50" />
+        </div> 
+    </div>
+}
+<br />
+

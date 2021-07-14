@@ -1,0 +1,33 @@
+﻿@using TestProject2.Models
+@{
+    ViewData["Title"] = "Личная страница";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Это личная страница.</p>
+<a asp-action="Index">Переход на главную страницу</a>
+
+
+@foreach (Student Student in @ViewBag.Group)
+{
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Студент
+        </div>
+        <div class="panel-body">
+           Имя: @Student.Name
+            <br>
+           Возраст: @Student.Age
+            <br>
+
+           Пол: @if (Student.Gender == 1)
+            {
+            <p>Девушка</p>
+            }
+            else {
+            <p>Парень</p>
+            }
+        </div>
+    </div>
+}
