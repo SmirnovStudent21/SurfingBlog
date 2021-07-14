@@ -44,9 +44,9 @@ namespace SurfClub.Controllers
                     //авторизовать на сайте, что-то сделать
 
                     var claims = new List<Claim>
-            {
-                new Claim(ClaimsIdentity.DefaultNameClaimType, user.Id.ToString())
-            };
+                        {
+                            new Claim(ClaimsIdentity.DefaultNameClaimType, user.Id.ToString())
+                        };
 
                     var authProp = new AuthenticationProperties();
                     authProp.IsPersistent = true;
@@ -61,7 +61,8 @@ namespace SurfClub.Controllers
                     }
 
                     // создаем объект ClaimsIdentity
-                    ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+                    ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", 
+                        ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
                     // установка аутентификационных куки
                     HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id), authProp);
                     HttpContext.Session.SetString("NickName", user.Nickname);

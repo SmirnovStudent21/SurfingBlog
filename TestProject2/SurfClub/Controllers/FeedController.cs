@@ -26,7 +26,7 @@ namespace SurfClub.Controllers
 
         public IActionResult Index()
         {
-            var posts = dbContext.Posts.Include(c => c.Author).OrderBy(c => c.PublishDate).ToArray();  //Microsoft.Data.SqlClient.SqlException: "Invalid object name 'Posts'."
+            var posts = dbContext.Posts.Include(c => c.Author).OrderBy(c => c.PublishDate).ToArray(); 
 
             ViewBag.Posts = posts;
 
