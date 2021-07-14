@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Практика\\source\\repos\\TestProject2\\SurfClub\\SurfClub.csproj": {}
+    "D:\\Practice2021\\SurfingBlog\\TestProject2\\SurfClub\\SurfClub.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Практика\\source\\repos\\TestProject2\\SurfClub\\SurfClub.csproj": {
+    "D:\\Practice2021\\SurfingBlog\\TestProject2\\SurfClub\\SurfClub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Практика\\source\\repos\\TestProject2\\SurfClub\\SurfClub.csproj",
+        "projectUniqueName": "D:\\Practice2021\\SurfingBlog\\TestProject2\\SurfClub\\SurfClub.csproj",
         "projectName": "SurfClub",
-        "projectPath": "C:\\Users\\Практика\\source\\repos\\TestProject2\\SurfClub\\SurfClub.csproj",
+        "projectPath": "D:\\Practice2021\\SurfingBlog\\TestProject2\\SurfClub\\SurfClub.csproj",
         "packagesPath": "C:\\Users\\Практика\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Практика\\source\\repos\\TestProject2\\SurfClub\\obj\\",
+        "outputPath": "D:\\Practice2021\\SurfingBlog\\TestProject2\\SurfClub\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Практика\\AppData\\Roaming\\NuGet\\NuGet.Config",

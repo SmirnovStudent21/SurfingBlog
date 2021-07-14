@@ -51,7 +51,7 @@ namespace SurfClub.Controllers
                     var authProp = new AuthenticationProperties();
                     authProp.IsPersistent = true;
                     authProp.ExpiresUtc = DateTime.UtcNow.AddHours(2);
-
+                    //Если стоит галка, то запоминаем пользователя
                     if (model.RememberMe)
 
                     {

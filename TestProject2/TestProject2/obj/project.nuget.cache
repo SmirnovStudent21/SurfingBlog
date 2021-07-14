@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q1w3JnjWcAGAHSJw7hopKrQYtQCoXRjEuF1HcttWmpAtDwmhOWIJP2lOJgXVK8fVqLqVxy2xm1txuaSKrrGJqw==",
+  "dgSpecHash": "kVvYGByBJNVhnYuKdjWdm6w0I/G/Py7jsSwS5RX2JuJpPs3Ru0uEPBJ7Zw9Wnu5L9Jrlu65/3Tyx8GQHdwQLRA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Практика\\source\\repos\\TestProject2\\TestProject2\\TestProject2.csproj",
+  "projectFilePath": "D:\\Practice2021\\SurfingBlog\\TestProject2\\TestProject2\\TestProject2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Практика\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Практика\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
