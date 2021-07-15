@@ -8,9 +8,12 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Mvc;
 using SurfClub.Models.DbModels;
 using SurfClub.Helpers;
+=======
+>>>>>>> 89930562a059d0dde2c1508d312b327fab35f9b8
 
 namespace SurfClub.Controllers
 {
@@ -25,6 +28,7 @@ namespace SurfClub.Controllers
         {
             return View();
         }
+<<<<<<< HEAD
         [HttpPost]
         public IActionResult AddUser(User model, IFormFile ImageData)
         {
@@ -80,6 +84,16 @@ namespace SurfClub.Controllers
            // return RedirectToAction("Index", "Feed");
         
         
+=======
+        [HttpGet]
+        public IActionResult Register(RegisterViewModel model)
+        {
+
+
+
+
+            return View();
+>>>>>>> 89930562a059d0dde2c1508d312b327fab35f9b8
         }
 
 
