@@ -44,9 +44,9 @@ namespace SurfClub.Controllers
                     //авторизовать на сайте, что-то сделать
 
                     var claims = new List<Claim>
-            {
-                new Claim(ClaimsIdentity.DefaultNameClaimType, user.Id.ToString())
-            };
+                    {
+                        new Claim(ClaimsIdentity.DefaultNameClaimType, user.Id.ToString())
+                    };
 
                     var authProp = new AuthenticationProperties();
                     authProp.IsPersistent = true;

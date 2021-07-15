@@ -68,9 +68,5 @@ namespace SurfClub.Controllers
             return View("index");
         }
 
-
-
-
-
     }
 }

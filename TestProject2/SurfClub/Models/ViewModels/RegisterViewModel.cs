@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SurfClub.Models.DbModels
+namespace SurfClub.Models.ViewModels
 {
-    public class User
+    public class RegisterViewModel
     {
         public int Id { get; set; }
 
@@ -21,14 +20,13 @@ namespace SurfClub.Models.DbModels
         [MaxLength(20), MinLength(6, ErrorMessage = "Минимальная длина пароля 6 символов")]
         public string Password { get; set; }
 
-        [Required(ErrorMessage = "Повтор обязателен")]
-        [NotMapped]
-        public String ConfirmPassword { get; set; }
+         [Required(ErrorMessage = "Введите пароль ещё раз")]
+         [Compare("Password", ErrorMessage = "Пароли не совпадают")]
+         public string PassConf { get; set; }
 
-        
         [MaxLength(31, ErrorMessage = "Максимальная длина — 31 символ")]
         public string Surname { get; set; }
-        
+
         [MaxLength(31, ErrorMessage = "Максимальная длина — 31 символ")]
         public string Name { get; set; }
         [MaxLength(255, ErrorMessage = "Максимальная длина — 255 символов")]
@@ -39,5 +37,7 @@ namespace SurfClub.Models.DbModels
         public string Progress { get; set; }
         public Guid? Photo { get; set; }
 
-    }
+        public string Register { get; set;  }
+    
+ }
 }

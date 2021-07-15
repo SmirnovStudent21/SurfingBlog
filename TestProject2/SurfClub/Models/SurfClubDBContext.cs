@@ -14,16 +14,19 @@ namespace SurfClub.Models
         public DbSet<Post> Posts { get; set; }
         public SurfClubDbContext(DbContextOptions options) : base(options)
         {
-            Database.EnsureCreated();
+            Database.EnsureCreated();       //The seed entity for entity type 'User' cannot be added because no value was provided for the required property 'Surname'.
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasData(
-                new User { Id = 1, 
-                           Nickname = "Testuser", 
-                           Password = "TestPassword",
+                new User { Id = 1,
+                    Nickname = "Testuser",
+                    Password = "TestPassword",
+                  //  PassConf = "TestPassword",
+                    Email = "test@test.com",
+                    Surname = "Valov",
                            Photo = new Guid("498d7e21-cb9b-43a6-9e5b-37fcb41e273f")
-                });
+                }) ;
         }
         
     }
