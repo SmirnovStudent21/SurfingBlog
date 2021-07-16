@@ -1,5 +1,9 @@
 ﻿@model SurfClub.Models.DbModels.Post
 
+@{
+    ViewData["Title"] = "Лента новостей";
+}
+
 @using Microsoft.AspNetCore.Http
 @using SurfClub.Helpers
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
@@ -14,24 +18,24 @@
 
         <div class="card">
             <div class="card-header">
-                
-                    <label asp-for="Text">Введите текст</label>
-                    <textarea asp-for="Text" rows="10" cols="100"></textarea>
-                    <span asp-validation-for="Text"></span>
-                
-            </div>
-                <div class="card-body">
-                    <input type="file"
-                           accept=".jpg,.jpeg,.png"
-                           name="imageData" />
-                </div>
 
-                <div class="form-group">
-                    <input type="submit" value="Добавить" />
-                </div>
+                <label asp-for="Text">Введите текст</label>
+                <textarea asp-for="Text" rows="10" cols="100"></textarea>
+                <span asp-validation-for="Text"></span>
 
             </div>
-</form>
+            <div class="card-body">
+                <input type="file"
+                       accept=".jpg,.jpeg,.png"
+                       name="imageData" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Добавить" />
+            </div>
+
+        </div>
+    </form>
 }
 
 
@@ -56,8 +60,7 @@
             @post.PublishDate
         </div>
         <div class="card-body">
-            @post.Text
-
+            <p>@post.Text</p>
             @{
                 var photoUrl = ImageHelper.GetUrl(post.Photo);
                 if (photoUrl != null)

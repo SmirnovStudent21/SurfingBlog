@@ -1,18 +1,15 @@
-<<<<<<< HEAD
-﻿@model SurfClub.Models.DbModels.User
+
+@model SurfClub.Models.DbModels.User
+
+@{
+    ViewData["Title"] = "Регистрация";
+}
 
 <form asp-controller="Register" asp-action="AddUser" method="post" enctype="multipart/form-data">
     <div class="card">
         <div class="card-header">
             <label>Регистрация</label>
-=======
-﻿@model SurfClub.Models.ViewModels.RegisterViewModel
 
-<form asp-controller="Register" asp-action="Register" asp-antiforgery="true">
-    <div class="card">
-        <div class="card-header">
-            <label asp-for="Register">Регистрация</label>
->>>>>>> 89930562a059d0dde2c1508d312b327fab35f9b8
             <div class="card-body">
                 <div class="form.group">
                     <label asp-for="Nickname">Псевдоним*</label>
@@ -22,11 +19,7 @@
 
                 <div class="form.group">
                     <label asp-for="Email">Почта*</label>
-<<<<<<< HEAD
                     <input type="email" asp-for="Email" />
-=======
-                    <input type="text" asp-for="Email" />
->>>>>>> 89930562a059d0dde2c1508d312b327fab35f9b8
                     <span asp-validation-for="Email"> </span>
                 </div>
 
@@ -37,21 +30,18 @@
                 </div>
 
                 <div class="form.group">
-<<<<<<< HEAD
-                    <label asp-for="ConfirmPassword">Пароль*</label>
+
+
+                    <label asp-for="ConfirmPassword">Подтвердите пароль*</label>
                     <input type="password" asp-for="ConfirmPassword" />
                     <span asp-validation-for="ConfirmPassword"> </span>
-=======
-                    <label asp-for="PasswordConfirm">Подтвердите пароль*</label>
-                    <input type="password" asp-for="PasswordConfirm" />
-                    <span asp-validation-for="PasswordConfirm"> </span>
->>>>>>> 89930562a059d0dde2c1508d312b327fab35f9b8
+
                 </div>
 
                 <div class="form.group">
                     <label asp-for="Surname">Фамилия</label>
                     <input type="text" asp-for="Surname" />
-<<<<<<< HEAD
+
                     <span asp-validation-for="Surname"> </span>
 
                 </div>
@@ -60,16 +50,9 @@
                     <label asp-for="Name">Имя</label>
                     <input type="text" asp-for="Name" />
                     <span asp-validation-for="Name"> </span>
-=======
 
                 </div>
-                
-                <div class="form.group">
-                    <label asp-for="Name">Имя</label>
-                    <input type="text" asp-for="Name" />
->>>>>>> 89930562a059d0dde2c1508d312b327fab35f9b8
 
-                </div>
 
                 <div class="form.group">
                     <label asp-for="Contact">Контактная информация</label>
@@ -100,11 +83,7 @@
                 </div>
 
                 <div class="form.group">
-<<<<<<< HEAD
                     <input type="submit" value="Зарегистрироваться" />
-=======
-                    <input type="submit" value="Войти" />
->>>>>>> 89930562a059d0dde2c1508d312b327fab35f9b8
                 </div>
             </div>
         </div>
@@ -114,15 +93,6 @@
 </form>
 
 
-<<<<<<< HEAD
 
+Уже есть аккаунт? <a class="btn btn-info" asp-controller="Login" asp-action="Index">Войти</a>
 
-
-Уже есть аккаунт? <a class="btn btn-info" asp-controller="Login" asp-action="Index">Войти</a>  
-=======
-    Регистрацию доделаем в четверг!
-
-
-
-Уже есть аккаунт? <a class="btn btn-info" asp-controller="Login" asp-action="Index">Войти</a> 
->>>>>>> 89930562a059d0dde2c1508d312b327fab35f9b8

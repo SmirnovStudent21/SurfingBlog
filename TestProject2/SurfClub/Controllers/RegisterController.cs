@@ -8,12 +8,10 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
-<<<<<<< HEAD
 using Microsoft.AspNetCore.Mvc;
 using SurfClub.Models.DbModels;
 using SurfClub.Helpers;
-=======
->>>>>>> 89930562a059d0dde2c1508d312b327fab35f9b8
+using System;
 
 namespace SurfClub.Controllers
 {
@@ -28,7 +26,7 @@ namespace SurfClub.Controllers
         {
             return View();
         }
-<<<<<<< HEAD
+
         [HttpPost]
         public IActionResult AddUser(User model, IFormFile ImageData)
         {
@@ -42,11 +40,12 @@ namespace SurfClub.Controllers
                     ImageHelper helper = new ImageHelper();
                     model.Photo = ImageHelper.UploadImage(ImageData);
                 }
-                else {
+                else
+                {
                     ImageHelper helper = new ImageHelper();
                     model.Photo = ImageHelper.UploadImage(ImageData);
                 }
-                
+
 
                 var NickCheck = dbContext.Users.FirstOrDefault(c => c.Nickname == model.Nickname); //Data is Null. This method or property cannot be called on Null values.
                 if (NickCheck != null)
@@ -72,33 +71,49 @@ namespace SurfClub.Controllers
                 dbContext.Users.Add(model);
                 dbContext.SaveChanges();
 
+                var claims = new List<Claim>
+
+                    {
+                        new Claim(ClaimsIdentity.DefaultNameClaimType, model.Id.ToString())
+                    };
+
+                {
+                    new Claim(ClaimsIdentity.DefaultNameClaimType, model.Id.ToString());
+                }
+
+
+                var authProp = new AuthenticationProperties();
+                authProp.IsPersistent = true;
+                authProp.ExpiresUtc = DateTime.UtcNow.AddHours(2);
+
+                ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie",
+                       ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+                // установка аутентификационных куки
+                HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id), authProp);
+                HttpContext.Session.SetString("NickName", model.Nickname);
+                HttpContext.Session.SetString("Photo", model.Photo.ToString());
+                HttpContext.Session.SetInt32("UserId", model.Id);
+
+
                 return RedirectToAction("Index", "Feed");
 
             }
 
-           // dbContext.Users.Add(model);
-           // dbContext.SaveChanges();
+            // dbContext.Users.Add(model);
+            // dbContext.SaveChanges();
 
-           return View("Index");
+            return View("Index");
 
-           // return RedirectToAction("Index", "Feed");
-        
-        
-=======
-        [HttpGet]
-        public IActionResult Register(RegisterViewModel model)
-        {
+            // return RedirectToAction("Index", "Feed");
 
 
 
 
-            return View();
->>>>>>> 89930562a059d0dde2c1508d312b327fab35f9b8
+
+
+
+
+
         }
-
-
-
-
-
     }
 }

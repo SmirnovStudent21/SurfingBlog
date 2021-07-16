@@ -7,6 +7,10 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+input, label {
+    display: block;
+}
+
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;
@@ -62,6 +66,8 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -76,4 +82,31 @@ body {
 
 .logobg {
     background-color: #c8d3d9;
+}
+
+.login-card {
+    width: 300px;
+    margin: 5px auto;
+}
+
+.center {
+    width: 50%;
+    margin: 5px auto;
+    text-align: center;
+}
+
+.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+*.vcenter {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+/*Отсуп между постами*/
+.card {
+    margin-bottom: 10px !important;
 }
