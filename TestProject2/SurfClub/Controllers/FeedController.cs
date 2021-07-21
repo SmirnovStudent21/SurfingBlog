@@ -39,7 +39,13 @@ namespace SurfClub.Controllers
         public IActionResult AddPost(Post model,IFormFile ImageData)
         {
             if (string.IsNullOrEmpty(model.Text) && ImageData == null)
-            { 
+            {
+
+                var posts1 = dbContext.Posts
+                    .Include(c => c.Author)
+                    .OrderBy(c => c.PublishDate)
+                    .ToArray();
+                ViewBag.Posts = posts1;
                 return View("Index", model);  
             }
 
@@ -61,8 +67,11 @@ namespace SurfClub.Controllers
             dbContext.Posts.Add(model);
             dbContext.SaveChanges();
 
-            var posts1 = dbContext.Posts.Include(c => c.Author).OrderBy(c => c.PublishDate).ToArray();
-            ViewBag.Posts = posts1;
+            var posts = dbContext.Posts
+                .Include(c => c.Author)
+                .OrderBy(c => c.PublishDate)
+                .ToArray();
+            ViewBag.Posts = posts;
 
 
             return View("index");
