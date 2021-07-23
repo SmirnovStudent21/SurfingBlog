@@ -21,7 +21,7 @@ namespace SurfClub.Helpers
 
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
-                    imageData.CopyToAsync(fileStream);
+                   imageData.CopyTo(fileStream);
                 } 
             }
             return result;

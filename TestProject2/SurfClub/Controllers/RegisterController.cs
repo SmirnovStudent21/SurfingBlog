@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using SurfClub.Models.DbModels;
 using SurfClub.Helpers;
 using System;
+using System.IO;
 
 namespace SurfClub.Controllers
 {
@@ -37,6 +38,13 @@ namespace SurfClub.Controllers
 
                 if (ImageData != null)
                 {
+                    var extension = Path.GetExtension(ImageData.FileName);
+                    if (extension != ".jpg" && extension != ".jpeg" && extension != ".png")
+                    {
+                        ModelState.AddModelError("Photo",
+                            "Можно загрузить файлы только с расширениями .jpg, .jpeg, .png");
+                        return View("Index", model);
+                    }
                     ImageHelper helper = new ImageHelper();
                     model.Photo = ImageHelper.UploadImage(ImageData);
                 }

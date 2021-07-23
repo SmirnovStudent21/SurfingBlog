@@ -11,18 +11,20 @@ namespace SurfClub.Models.DbModels
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Псевдоним обязателен")]
+        [Required(ErrorMessage = "Псевдоним обязателен"), RegularExpression("^[а-яА-ЯёЁa-zA-Z0-9_]+$", ErrorMessage = "Неверный формат ввода псевдонима!")]
         [MaxLength(20), MinLength(3, ErrorMessage = "Минимальная длина псевдонима 3 символа")]
         public string Nickname { get; set; }
-        [Required]
-        [MaxLength(31)]
+        [Required(ErrorMessage = "Почта обязательна")]
+        [MaxLength(31), RegularExpression("^([\\w\\.\\-]+)@([\\w\\-]+)((\\.(\\w){2,3})+)$", ErrorMessage = "Неверный формат ввода адреса почты!")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Пароль обязателен")]
+        [Required(ErrorMessage = "Пароль обязателен"), RegularExpression("^[a-zA-Z0-9]+$", ErrorMessage = "Неверный формат ввода пароля!")]
         [MaxLength(20), MinLength(6, ErrorMessage = "Минимальная длина пароля 6 символов")]
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Повтор обязателен")]
+
         [NotMapped]
+        [Compare("Password", ErrorMessage = "Пароли не совпадают!")]
         public String ConfirmPassword { get; set; }
 
         

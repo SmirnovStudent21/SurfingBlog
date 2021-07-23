@@ -13,19 +13,28 @@
             <div class="card-body">
                 <div class="form.group">
                     <label asp-for="Nickname">Псевдоним*</label>
-                    <input type="text" asp-for="Nickname" />
+                    <input type="text" asp-for="Nickname"
+                           autocomplete="off"
+                    data-placement="bottom"
+                    data-toggle="popover"
+                    data-content="От 3 до 20 символов. Латиница, кириллица, цифры и подчеркивания"/>
                     <span asp-validation-for="Nickname"> </span>
                 </div>
 
                 <div class="form.group">
                     <label asp-for="Email">Почта*</label>
-                    <input type="email" asp-for="Email" />
+                    <input type="email" asp-for="Email" 
+                           placeholder="example@ex.ru"/>
                     <span asp-validation-for="Email"> </span>
                 </div>
 
                 <div class="form.group">
                     <label asp-for="Password">Пароль*</label>
-                    <input type="password" asp-for="Password" />
+                    <input type="password" asp-for="Password" 
+                           autocomplete="off"
+                    data-placement="bottom"
+                    data-toggle="popover"
+                    data-content="От 6 до 20 символов. Латиница, цифры и подчеркивания"/>
                     <span asp-validation-for="Password"> </span>
                 </div>
 
@@ -77,6 +86,8 @@
                     <input type="file"
                            accept=".jpg,.jpeg,.png"
                            name="imageData" />
+                    <span asp-validation-for="Photo"> </span>
+
                 </div>
 
                 <div class="validation" asp-validation-summary="ModelOnly">
